@@ -10,11 +10,31 @@ import SwiftUI
 struct CircleView: View {
     
     // MARK: Stored properties
-    @State var radius = 10.0
     // What ever a user adds to the text field
     @State var providedRadius = ""
     
     // MARK: Computed properties
+    //Check the input given by the user If possible, return a Double, otherwise (bad input) return nil
+    @State var radius: Double? {
+        
+        //Tests of the provided input
+        // 1. Ensure that we can simply change the inpuot into a double
+        // 2.Ensure that the value as a double is more that 0
+        //With a guard statment we list the things we wish to be true... and provide an action to carry out when those conditions are not met.
+        guard let radius = Double(providedRadius),
+              radius > 0
+        else {
+        //WHen the tests are failed, we do not have a valid radius
+            return nil
+        
+        }
+    
+        // if we get here we know the radius is good
+        return radius
+    
+    }
+    
+    
     var area: Double {
         return Double.pi * radius * radius
     }
