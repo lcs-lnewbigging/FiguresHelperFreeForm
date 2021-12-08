@@ -63,6 +63,10 @@ struct CircleView: View {
                 TextField("Radius",
                           text: $providedRadius,
                           prompt: Text ("Value Greater than 0..."))
+                  //    Ternary Conditional operators
+                //          "one line if statment"
+                //        CONDITION    TRUE           FALSE
+                    .foregroundColor(radius == nil ? Color.red : Color.primary )
                 
                 
                
