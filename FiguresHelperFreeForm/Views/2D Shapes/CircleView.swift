@@ -65,8 +65,7 @@ struct CircleView: View {
                           prompt: Text ("Value Greater than 0..."))
                 
                 
-                // Output: Radius
-                SliderValueView(value: radius)
+               
                 
                 SectionLabelView(text: "Area", variable: "")
                 
